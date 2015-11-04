@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 	float start_time = Tools::GetMyCPUTime(Tools::MILLISECONDS);
 	//cout << "Start time: " << start_time << endl;
 	
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		if (!Tools::ReadEduxFileData(argv[1], &M, &N, weights, values, &id, i))
 		{

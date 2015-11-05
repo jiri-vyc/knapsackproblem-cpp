@@ -14,11 +14,21 @@ public:
 	static void printArray(T * in, int size)
 	{
 		int i;
-		for (i = 1; i < size; i++)
+		for (i = 0; i < size-1; i++)
 		{
 			std::cout << in[i] << " ";
 		}
 		std::cout << in[i] << std::endl;
+	}
+
+	template <class T>
+	static void print2DArray(T ** in, int sizeX, int sizeY)
+	{
+		int i;
+		for (i = 0; i < sizeX; i++)
+		{
+			Tools::printArray<T>(in[i], sizeY);
+		}
 	}
 	
 	template <class T>
@@ -26,8 +36,8 @@ public:
 	{
 		unsigned int i;
 		for (i = 0; i < in->size() - 1; i++)
-				{
-			std::cout << in->at(i) << " ";
+			{
+				std::cout << in->at(i) << " ";
 			}
 		std::cout << in->at(i) << std::endl;
 	}
@@ -108,7 +118,6 @@ public:
 	{
 		string line;
 		fstream f;
-		int i = 1;
 		f.open(filename, ios_base::in);
 		if (f.fail())
 		{
@@ -123,10 +132,10 @@ public:
 		is2 >> *id;
 		is2 >> *N;
 		is2 >> *M;
-		weights = new int[*N + 1];
-		values = new int[*N + 1];
-		weights[0] = 0;
-		values[0] = 0;
+		weights = new int[*N];
+		values = new int[*N];
+
+		int i = 0;
 		while (is2 >> weights[i])
 		{
 			is2 >> values[i];

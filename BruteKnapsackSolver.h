@@ -4,7 +4,9 @@
 class BruteKnapsackSolver : public TreeKnapsackSolver
 {
 public:
-	BruteKnapsackSolver() :TreeKnapsackSolver(){};
+	BruteKnapsackSolver() :TreeKnapsackSolver(){
+		cout << "Creating BruteKnapsackSolver" << endl;
+	};
 	BruteKnapsackSolver(int M, int N, int * weights, int * values, int id) : TreeKnapsackSolver(M, N, weights, values, id){
 		cout << "Creating BruteKnapsackSolver" << endl;
 	};

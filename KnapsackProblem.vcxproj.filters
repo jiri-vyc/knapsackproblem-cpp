@@ -39,6 +39,9 @@
     <ClCompile Include="HeuristicKnapsackSolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FPTASKnapsackSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoundKnapsackSolver.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeuristicKnapsackSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FPTASKnapsackSolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

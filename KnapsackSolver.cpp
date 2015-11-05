@@ -2,11 +2,19 @@
 
 using namespace std;
 
+KnapsackSolver::KnapsackSolver()
+{
+	this->m_items = new Item[1];
+	this->m_result_vector = new vector<bool>(1, 0);
+	this->m_current_vector = new vector<bool>(1, 0);
+	this->m_current_best_price = 0;
+	this->m_M = 0;
+	this->m_N = 0;
+	this->m_id = -1;
+}
+
 KnapsackSolver::KnapsackSolver(int M, int N, int * weights, int * values, int id)
 {
-	this->m_items = new Item[2];
-	this->m_result_vector = new vector<bool>(2, 0);
-	this->m_current_vector = new vector<bool>(2, 0);
 	this->LoadNewParams(M, N, weights, values, id);
 }
 
@@ -20,16 +28,16 @@ void KnapsackSolver::LoadNewParams(int M, int N, int * weights, int * values, in
 	delete this->m_result_vector;
 	this->m_result_vector = new vector<bool>(this->m_N, 0);
 	this->m_current_vector = new vector<bool>(this->m_N, 0);
+	delete this->m_items;
+	Item* items = new Item[m_N];
 
-	Item* items = new Item[m_N + 1];
-
-	for (int i = 0; i <= m_N; i++)
+	for (int i = 0; i < m_N; i++)
 	{
 		items[i].weight = weights[i];
 		items[i].value = values[i];
 	}
 
-	for (int i = 1; i <= m_N; i++)
+	for (int i = 0; i < m_N; i++)
 	{
 		items[i].level = i;
 	}
@@ -40,6 +48,7 @@ void KnapsackSolver::LoadNewParams(int M, int N, int * weights, int * values, in
 
 void KnapsackSolver::PrintParams()
 {
+	cout << "ID: " << this->m_id << endl;
 	cout << "Knapsack size: " << this->m_M << endl;
 	cout << "Item count: " << this->m_N << endl;
 	cout << "Items: ";
@@ -63,6 +72,11 @@ int KnapsackSolver::GetResultId()
 	return this->m_id;
 }
 
+std::vector<bool>* KnapsackSolver::GetResultVector()
+{
+	return m_result_vector;
+}
+
 
 bool KnapsackSolver::CheckIfBest(int currWeight, int currValue)
 {
@@ -74,13 +88,7 @@ void KnapsackSolver::SetRecursive(bool in)
 	cout << "Setting recursive to " << in << endl;
 	m_recursive = in;
 }
-KnapsackSolver::KnapsackSolver()
-{
-	this->m_current_best_price = 0;
-	this->m_M = 0;
-	this->m_N = 0;
-	this->m_id = -1;
-}
+
 
 int KnapsackSolver::CompareItems(const void * a, const void * b)
 {
@@ -89,11 +97,11 @@ int KnapsackSolver::CompareItems(const void * a, const void * b)
 
 void KnapsackSolver::SortItems(bool rewriteOrder)
 {
-	qsort(m_items + 1, m_N, sizeof(Item), KnapsackSolver::CompareItems);
+	qsort(m_items, m_N, sizeof(Item), KnapsackSolver::CompareItems);
 
 	if (rewriteOrder)
 	{
-		for (int i = 1; i <= m_N; i++)
+		for (int i = 0; i < m_N; i++)
 		{
 			m_items[i].level = i;
 		}

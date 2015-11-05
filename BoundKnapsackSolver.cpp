@@ -23,16 +23,11 @@ int BoundKnapsackSolver::CalculateUpperBound(Item node)
 
 bool BoundKnapsackSolver::IsPerspective(Item node)
 {
-	int upperBound = CalculateUpperBound(node);
-	//cout << "Checking " << node;
-	if (node.weight > this->m_M || upperBound < m_current_upperBound)
+	int maxPrice = GetMaxBranchPrice(node.level);
+	if (node.weight > this->m_M || node.value + maxPrice < m_current_best_price)
 	{
-		//cout << " - not perspective" << endl;
 		 return false;
 	}
-	//cout << endl;
-	m_current_upperBound = upperBound;
-
 	return true;
 }
 

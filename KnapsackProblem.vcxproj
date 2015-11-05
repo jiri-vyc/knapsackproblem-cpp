@@ -74,6 +74,7 @@
     <ClCompile Include="BoundKnapsackSolver.cpp" />
     <ClCompile Include="BruteKnapsackSolver.cpp" />
     <ClCompile Include="DynamicKnapsackSolver.cpp" />
+    <ClCompile Include="FPTASKnapsackSolver.cpp" />
     <ClCompile Include="HeuristicKnapsackSolver.cpp" />
     <ClCompile Include="Includes.cpp" />
     <ClCompile Include="KnapsackProblem.cpp" />
@@ -84,6 +85,7 @@
     <ClInclude Include="BoundKnapsackSolver.h" />
     <ClInclude Include="BruteKnapsackSolver.h" />
     <ClInclude Include="DynamicKnapsackSolver.h" />
+    <ClInclude Include="FPTASKnapsackSolver.h" />
     <ClInclude Include="HeuristicKnapsackSolver.h" />
     <ClInclude Include="Includes.h" />
     <ClInclude Include="Item.h" />

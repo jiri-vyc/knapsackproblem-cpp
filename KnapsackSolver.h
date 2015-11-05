@@ -12,6 +12,7 @@ public:
 	void PrintParams();
 	void PrintResult();
 	int GetResult();
+	std::vector<bool>* GetResultVector();
 	int GetResultId();
 protected:
 	int m_id;

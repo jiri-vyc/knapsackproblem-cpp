@@ -3,6 +3,7 @@
 #include "BoundKnapsackSolver.h"
 #include "DynamicKnapsackSolver.h"
 #include "HeuristicKnapsackSolver.h"
+#include "FPTASKnapsackSolver.h"
 
 using namespace std;
 
@@ -28,6 +29,13 @@ KnapsackSolver* ChooseSolver(int argc, char* argv[])
 		}
 		else if ((string)argv[2] == "heuristic"){
 			solver = new HeuristicKnapsackSolver();
+		}
+		else if ((string)argv[2] == "fptas"){
+			solver = new FPTASKnapsackSolver();
+			if (argc > 3) {
+				delete solver;
+				solver = new FPTASKnapsackSolver(stod((string)argv[3]));
+			}
 		}
 	}
 	else
@@ -58,16 +66,15 @@ int main(int argc, char* argv[])
 	float start_time = Tools::GetMyCPUTime(Tools::MILLISECONDS);
 	//cout << "Start time: " << start_time << endl;
 	
-	for (int i = 0; i < 1; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		if (!Tools::ReadEduxFileData(argv[1], &M, &N, weights, values, &id, i))
 		{
 			return 0;
 		}
 		solver->LoadNewParams(M, N, weights, values, id);
-
+		//solver->PrintParams();
 		solver->Solve();
-
 		f << solver->GetResultId() << "," << solver->GetResult() << endl;
 		solver->PrintResult();
 	}

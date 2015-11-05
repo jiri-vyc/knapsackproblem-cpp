@@ -1,14 +1,16 @@
-﻿Build started 04.11.2015 1:34:11 AM.
+﻿Build started 05.11.2015 5:49:52 PM.
      1>Project "C:\Users\jiriv_000\Documents\Visual Studio 2013\Projects\KnapsackProblem\KnapsackProblem\KnapsackProblem.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt KnapsackProblem.cpp TreeKnapsackSolver.cpp
-         TreeKnapsackSolver.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FPTASKnapsackSolver.cpp KnapsackProblem.cpp
          KnapsackProblem.cpp
          Generating Code...
+         Skipping... (no relevant changes detected)
+         FPTASKnapsackSolver.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jiriv_000\Documents\Visual Studio 2013\Projects\KnapsackProblem\KnapsackProblem\Debug\KnapsackProblem.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jiriv_000\Documents\Visual Studio 2013\Projects\KnapsackProblem\KnapsackProblem\Debug\KnapsackProblem.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jiriv_000\Documents\Visual Studio 2013\Projects\KnapsackProblem\KnapsackProblem\Debug\KnapsackProblem.lib" /MACHINE:X86 Debug\BoundKnapsackSolver.obj
          Debug\BruteKnapsackSolver.obj
          Debug\DynamicKnapsackSolver.obj
+         Debug\FPTASKnapsackSolver.obj
          Debug\HeuristicKnapsackSolver.obj
          Debug\Includes.obj
          Debug\KnapsackProblem.obj
@@ -19,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.42
+Time Elapsed 00:00:01.82

@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
 	solver = ChooseSolver(argc, argv);
 	
 	fstream f;
-	f.open("results.csv", ios_base::app);
+	f.open("results_" + (string)argv[2] + ".csv", ios_base::app);
 
 	float start_time = Tools::GetMyCPUTime(Tools::MILLISECONDS);
 	//cout << "Start time: " << start_time << endl;
@@ -76,11 +76,11 @@ int main(int argc, char* argv[])
 		//solver->PrintParams();
 		solver->Solve();
 		f << solver->GetResultId() << "," << solver->GetResult() << endl;
-		solver->PrintResult();
+		//solver->PrintResult();
 	}
 
 	float end_time = Tools::GetMyCPUTime(Tools::MILLISECONDS);
-	//cout << end_time - start_time << endl;
+	cout << end_time - start_time << endl;
 	f << (end_time - start_time);
 	f << endl;
 

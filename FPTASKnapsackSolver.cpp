@@ -20,6 +20,7 @@ bool FPTASKnapsackSolver::Solve()
 
 	DynamicKnapsackSolver* solver = new DynamicKnapsackSolver;
 	solver->LoadNewParams(m_M, m_N, new_weights, new_values, m_id);
+	solver->SetSilent(true);
 	//solver->PrintParams();
 	solver->Solve();
 	m_result_vector = solver->GetResultVector();
@@ -37,24 +38,4 @@ bool FPTASKnapsackSolver::Solve()
 void FPTASKnapsackSolver::SetError(double in)
 {
 	m_eps = in;
-}
-
-int FPTASKnapsackSolver::GetMaxValue()
-{
-	int max = 0;
-	for (int i = 0; i < m_N; i++){
-		if (max += m_items[i].value > max){
-			max = m_items[i].value;
-		}	
-	}
-	return max;
-}
-
-int FPTASKnapsackSolver::GetSumValue()
-{
-	int max = 0;
-	for (int i = 0; i < m_N; i++){
-		max += m_items[i].value;
-	}
-	return max;
 }

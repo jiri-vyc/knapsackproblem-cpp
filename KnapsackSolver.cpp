@@ -43,6 +43,7 @@ void KnapsackSolver::LoadNewParams(int M, int N, int * weights, int * values, in
 	}
 
 	m_items = items;
+	m_max_value = GetSumValue();
 }
 
 
@@ -89,6 +90,11 @@ void KnapsackSolver::SetRecursive(bool in)
 	m_recursive = in;
 }
 
+void KnapsackSolver::SetSilent(bool in)
+{
+	if (!in) cout << "Turning off silent mode." << endl;
+	m_silent = in;
+}
 
 int KnapsackSolver::CompareItems(const void * a, const void * b)
 {
@@ -107,4 +113,24 @@ void KnapsackSolver::SortItems(bool rewriteOrder)
 		}
 	}
 
+}
+
+int KnapsackSolver::GetMaxValue()
+{
+	int max = 0;
+	for (int i = 0; i < m_N; i++){
+		if (max += m_items[i].value > max){
+			max = m_items[i].value;
+		}
+	}
+	return max;
+}
+
+int KnapsackSolver::GetSumValue()
+{
+	int sum = 0;
+	for (int i = 0; i < m_N; i++){
+		sum += m_items[i].value;
+	}
+	return sum;
 }

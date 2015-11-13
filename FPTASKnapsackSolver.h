@@ -18,7 +18,5 @@ public:
 	};
 	void SetError(double in);
 protected:
-	int GetMaxValue();
-	int GetSumValue();
 	double m_eps;
 };
